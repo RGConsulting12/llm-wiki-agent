@@ -21,6 +21,19 @@ Claude Code reads this file automatically and follows the workflows below.
 
 ---
 
+## Skills Governance (Single-Repo Policy)
+
+For software-engineering workflow quality (planning, testing, review, security, shipping), use a single canonical skills source:
+
+- Canonical skills repo: `https://github.com/RGConsulting12/agent-skills`
+- Do not use `everything-claude-code` (or any equivalent mega-pack) as a default baseline.
+- Keep this file focused on wiki domain behavior (`ingest/query/lint/graph`).
+- If a needed workflow is missing, add a local task-scoped instruction and upstream reusable guidance to `agent-skills`.
+
+See `docs/policies/single-repo-skills-policy.md`.
+
+---
+
 ## Directory Layout
 
 ```

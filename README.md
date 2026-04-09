@@ -190,6 +190,20 @@ Louvain community detection clusters nodes by topic. SHA256 cache means only cha
 
 The schema file tells the agent how to maintain the wiki — page formats, ingest/query/lint/graph workflows, naming conventions. This is the key config file. Edit it to customize behavior for your domain.
 
+### Skills governance (single-repo default)
+
+This project uses a **single canonical skills source** for software-engineering workflow quality:
+
+- `https://github.com/RGConsulting12/agent-skills`
+
+Domain-specific wiki behavior remains in this repository (`AGENTS.md`, `CLAUDE.md`, `GEMINI.md`), while general engineering workflow guidance (planning/testing/review/security/shipping) should come from that one skills repo by default.
+
+See:
+
+- `docs/policies/single-repo-skills-policy.md` (human policy)
+- `tools/check_skills_policy.py` (policy-as-code validation)
+- `.github/workflows/skills-policy.yml` (CI enforcement)
+
 | Agent | Schema file |
 |---|---|
 | Claude Code | `CLAUDE.md` |

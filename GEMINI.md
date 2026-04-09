@@ -18,6 +18,19 @@ Or use shorthand triggers:
 
 ---
 
+## Single-Repo Skills Policy (Canonical)
+
+For software-engineering workflow behavior, use exactly one default skills source:
+
+- **Canonical skills repository:** `https://github.com/RGConsulting12/agent-skills`
+- **Policy:** treat `agent-skills` as the first and only default skills layer.
+- **Do not use** `everything-claude-code` (or other mega skill packs) as baseline default context.
+- **If a workflow is missing:** add a task-scoped local instruction and upstream a reusable version to `agent-skills`.
+
+This repo keeps domain-specific wiki workflows locally (ingest/query/lint/graph), while engineering-process quality guidance comes from `agent-skills`.
+
+---
+
 ## Directory Layout
 
 ```

@@ -2,6 +2,21 @@
 
 This wiki is maintained entirely by your coding agent. No API key or Python scripts needed — just open this repo in Codex, OpenCode, or any agent that reads this file, and talk to it.
 
+## Skills Governance Policy (Single Source of Truth)
+
+This repository uses a single default skills source:
+
+- Canonical skills repo: `https://github.com/RGConsulting12/agent-skills`
+
+Policy rules:
+
+1. Use `agent-skills` as the only default software-engineering skills layer.
+2. Do not use `everything-claude-code` (or any equivalent mega-pack) as baseline/default skills context.
+3. Keep this repository's domain instructions (wiki ingest/query/lint/graph) local to this file.
+4. If a capability is missing, add a local task-specific instruction and upstream reusable guidance to `agent-skills`.
+
+See `docs/policies/single-repo-skills-policy.md` for the full policy and enforcement details.
+
 ## How to Use
 
 Describe what you want in plain English:
