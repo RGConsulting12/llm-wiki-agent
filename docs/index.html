@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent Skills Explorer</title>
+    <meta
+      name="description"
+      content="Interactive GitHub Pages explorer for the RGConsulting12/agent-skills repository."
+    />
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">GitHub Pages UI</p>
+        <h1>Agent Skills Explorer</h1>
+        <p class="subtitle">
+          Comprehensive, searchable view of
+          <code>RGConsulting12/agent-skills</code>
+        </p>
+      </div>
+      <div class="topbar-actions">
+        <a
+          id="repo-link"
+          class="btn"
+          href="https://github.com/RGConsulting12/agent-skills"
+          target="_blank"
+          rel="noreferrer"
+          >Open Repo</a
+        >
+        <button id="refresh-btn" class="btn btn-secondary" type="button">
+          Refresh Data
+        </button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel panel-wide" aria-labelledby="overview-title">
+        <div class="panel-head">
+          <h2 id="overview-title">Repository Overview</h2>
+          <p id="last-updated" class="muted">Loading repository metadata...</p>
+        </div>
+        <div id="overview-cards" class="cards"></div>
+      </section>
+
+      <section class="panel panel-wide" aria-labelledby="filters-title">
+        <div class="panel-head">
+          <h2 id="filters-title">Skill Explorer</h2>
+          <p class="muted">
+            Search, filter by lifecycle phase, and inspect each skill in depth.
+          </p>
+        </div>
+        <div class="filters">
+          <label>
+            Search
+            <input
+              id="search-input"
+              type="search"
+              placeholder="Search by name, description, trigger, or section text"
+            />
+          </label>
+          <label>
+            Lifecycle phase
+            <select id="phase-select">
+              <option value="all">All phases</option>
+            </select>
+          </label>
+          <label>
+            Sort
+            <select id="sort-select">
+              <option value="phase_name">Phase, then name</option>
+              <option value="name">Name (A-Z)</option>
+              <option value="section_count">Most detailed first</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section class="panel" aria-labelledby="skills-list-title">
+        <div class="panel-head">
+          <h2 id="skills-list-title">Skills</h2>
+          <p id="skills-count" class="muted"></p>
+        </div>
+        <div id="skills-list" class="skill-list"></div>
+      </section>
+
+      <section class="panel" aria-labelledby="skill-detail-title">
+        <div class="panel-head">
+          <h2 id="skill-detail-title">Skill Detail</h2>
+          <p class="muted">Click any skill card to inspect its content.</p>
+        </div>
+        <article id="skill-detail" class="skill-detail empty-state">
+          Select a skill to see frontmatter, sections, and source links.
+        </article>
+      </section>
+
+      <section class="panel panel-wide" aria-labelledby="repo-surface-title">
+        <div class="panel-head">
+          <h2 id="repo-surface-title">Repository Surface Map</h2>
+          <p class="muted">
+            High-level inventory of agents, commands, references, and docs.
+          </p>
+        </div>
+        <div id="surface-grid" class="surface-grid"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Built for GitHub Pages. Data source:
+        <a
+          href="https://api.github.com/repos/RGConsulting12/agent-skills"
+          target="_blank"
+          rel="noreferrer"
+          >GitHub REST API</a
+        >.
+      </p>
+    </footer>
+
+    <script type="module" src="./assets/app.js"></script>
+  </body>
+</html>

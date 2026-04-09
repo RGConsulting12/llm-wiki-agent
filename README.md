@@ -65,6 +65,33 @@ Plain English also works with any agent:
 
 Works with any markdown source — articles, papers, book chapters, meeting notes, journal entries, research summaries.
 
+## GitHub Pages: Agent Skills Explorer UI
+
+This repository now includes a static HTML5 dashboard for reviewing the full `agent-skills` repository from one place:
+
+- `docs/index.html`
+- `docs/assets/app.js`
+- `docs/assets/styles.css`
+
+### What it provides
+
+- Repository-level overview metrics (skills, phases, agents, commands, references)
+- Searchable skill catalog with lifecycle-phase filtering
+- Drill-down detail view for each `SKILL.md` (frontmatter + major sections)
+- Surface map for supporting assets (`agents/`, `.claude/commands/`, `references/`, `docs/`)
+
+### Publish on GitHub Pages
+
+1. Go to **Settings → Pages** in this repo.
+2. Set **Source** to `Deploy from a branch`.
+3. Select branch `main` and folder `/docs`.
+4. Save and open the published URL.
+
+The UI fetches live data from:
+
+- `https://api.github.com/repos/RGConsulting12/agent-skills`
+- `https://raw.githubusercontent.com/RGConsulting12/agent-skills/main/...`
+
 ## What You Get
 
 **Persistent wiki** — structured markdown pages that accumulate across sessions. Unlike chat, nothing is lost.
@@ -189,6 +216,20 @@ Louvain community detection clusters nodes by topic. SHA256 cache means only cha
 ## CLAUDE.md / AGENTS.md
 
 The schema file tells the agent how to maintain the wiki — page formats, ingest/query/lint/graph workflows, naming conventions. This is the key config file. Edit it to customize behavior for your domain.
+
+### Skills governance (single-repo default)
+
+This project uses a **single canonical skills source** for software-engineering workflow quality:
+
+- `https://github.com/RGConsulting12/agent-skills`
+
+Domain-specific wiki behavior remains in this repository (`AGENTS.md`, `CLAUDE.md`, `GEMINI.md`), while general engineering workflow guidance (planning/testing/review/security/shipping) should come from that one skills repo by default.
+
+See:
+
+- `docs/policies/single-repo-skills-policy.md` (human policy)
+- `tools/check_skills_policy.py` (policy-as-code validation)
+- `.github/workflows/skills-policy.yml` (CI enforcement)
 
 | Agent | Schema file |
 |---|---|

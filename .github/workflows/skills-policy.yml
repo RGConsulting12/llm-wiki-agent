@@ -1,0 +1,23 @@
+name: skills-policy
+
+on:
+  push:
+    branches:
+      - main
+      - "cursor/**"
+  pull_request:
+
+jobs:
+  enforce-single-repo-skills-policy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate skills policy
+        run: python tools/check_skills_policy.py
