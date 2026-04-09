@@ -65,6 +65,33 @@ Plain English also works with any agent:
 
 Works with any markdown source — articles, papers, book chapters, meeting notes, journal entries, research summaries.
 
+## GitHub Pages: Agent Skills Explorer UI
+
+This repository now includes a static HTML5 dashboard for reviewing the full `agent-skills` repository from one place:
+
+- `docs/index.html`
+- `docs/assets/app.js`
+- `docs/assets/styles.css`
+
+### What it provides
+
+- Repository-level overview metrics (skills, phases, agents, commands, references)
+- Searchable skill catalog with lifecycle-phase filtering
+- Drill-down detail view for each `SKILL.md` (frontmatter + major sections)
+- Surface map for supporting assets (`agents/`, `.claude/commands/`, `references/`, `docs/`)
+
+### Publish on GitHub Pages
+
+1. Go to **Settings → Pages** in this repo.
+2. Set **Source** to `Deploy from a branch`.
+3. Select branch `main` and folder `/docs`.
+4. Save and open the published URL.
+
+The UI fetches live data from:
+
+- `https://api.github.com/repos/RGConsulting12/agent-skills`
+- `https://raw.githubusercontent.com/RGConsulting12/agent-skills/main/...`
+
 ## What You Get
 
 **Persistent wiki** — structured markdown pages that accumulate across sessions. Unlike chat, nothing is lost.
